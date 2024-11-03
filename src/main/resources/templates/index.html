@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--table-striped:斑马线格式，table-bordered：带边框的表格，table-hover：鼠标悬停高亮的表格-->
+<table>
+    <!--tr标签定义html表格中的所有行-->
+    <!--    遍历集合，如果被遍历的变量users为null或者不存在，则不会进行遍历，也不会报错-->
+    <tr th:each="shoppingItem:${items}">
+        <!--        td标签定义html表格中的标准单元格-->
+        <td th:text="${shoppingItem.id}"></td>
+        <td th:text="${shoppingItem.itemName}"></td>
+        <td th:text="${shoppingItem.price}"></td>
+        <td th:text="${shoppingItem.stockSize}"></td>
+    </tr>
+</table>
+</body>
+
+</html>
