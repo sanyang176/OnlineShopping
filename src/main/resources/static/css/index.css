@@ -1,0 +1,46 @@
+a{
+    text-decoration: none;
+}
+
+.banner {
+    height: 500px;
+    background-color: #F5F5F5;
+}
+
+.banner  .wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    background-color: white;
+}
+
+.banner  .wrapper .subnav {
+    width: 240px;
+    height: 500px;
+    margin-right: 0;
+    background: gray;
+    float: left;
+}
+
+.banner .wrapper .subnav li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 10px 0;
+    line-height: 50px;
+    height: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.banner .wrapper .subnav ul li a {
+    margin-right: 5px;
+    font-size: 20px;
+    color: #fff;
+}
+.banner .wrapper .pic {
+    display: flex;
+    /* flex布局，父级宽度不够，子级元素被挤小了 */
+    width: 1000px;
+    height: 500px;
+    float: right;
+}

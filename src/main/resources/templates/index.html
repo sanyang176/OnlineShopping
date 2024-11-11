@@ -1,18 +1,57 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online Shopping Website</title>
+    <meta name="description" content="Website for Shopping">
+    <meta name="keywords" content="Online Shopping Website">
+    <meta name="author" content="San Yang">
+    <!--Apply setting to main window.-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="shortcut icon " type="images/x-icon" href="/image/shortcut.png">
+</head>
 <body>
-<!--table-striped:斑马线格式，table-bordered：带边框的表格，table-hover：鼠标悬停高亮的表格-->
-<table>
-    <!--tr标签定义html表格中的所有行-->
-    <!--    遍历集合，如果被遍历的变量users为null或者不存在，则不会进行遍历，也不会报错-->
-    <tr th:each="shoppingItem:${items}">
-        <!--        td标签定义html表格中的标准单元格-->
-        <td th:text="${shoppingItem.id}"></td>
-        <td th:text="${shoppingItem.itemName}"></td>
-        <td th:text="${shoppingItem.price}"></td>
-        <td th:text="${shoppingItem.stockSize}"></td>
-    </tr>
-</table>
+<div class="shortcut">
+    <div class="wrapper">
+        <!--ul,li分别为无序、有序列表-->
+        <ul>
+            <li><a href="">登录</a><a href="">注册</a><a href="">我的订单</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="header wrapper">
+    <img src="../image/shoppingWebsiteLogo.png" alt="" class="logo">
+    <div class = "nav">
+        <a href="">首页</a><a href="">书籍</a><a href="">户外</a><a href="">电器</a><a href="">美食</a><a href="">居家</a><a href="">洗护</a>
+    </div>
+    <div class="search-bar">
+        <label>
+            <input type="text" placeholder="搜索商品">
+        </label>
+        <input type="submit" value="搜索">
+    </div>
+</div>
+
+<div class = "banner">
+    <div class="wrapper">
+        <div class = "subnav">
+            <!--ul,li分别为无序、有序的列表-->
+            <ul>
+                <li><a href="">书籍</a><a href="">中文</a><a href="">外文</a></li>
+                <li><a href="">户外</a><a href="">探险</a><a href="">地质</a></li>
+                <li><a href="">电器</a><a href="">室内</a><a href="">户外</a></li>
+                <li><a href="">美食</a><a href="">蔬菜</a><a href="">水果</a></li>
+                <li><a href="">居家</a><a href="">奶粉</a><a href="">玩具</a></li>
+                <li><a href="">洗护</a><a href="">头部</a><a href="">全身</a></li>
+            </ul>
+        </div>
+        <img src="../image/mainPicture.jpg" alt="" class="pic">
+    </div>
+</div>
+
 </body>
 
 </html>
