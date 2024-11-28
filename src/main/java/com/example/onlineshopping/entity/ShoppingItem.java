@@ -9,12 +9,15 @@ import lombok.Setter;
 @Data
 public class ShoppingItem {
 
-    private int id;
+    private int Id;
 
-    private String itemName;
+    private String ItemName;
 
-    private int price;
+    private int Price;
 
-    private int stockSize;
+    private int StockSize;
 
+    private String PictureName;
+
+    private String ItemType;
 }

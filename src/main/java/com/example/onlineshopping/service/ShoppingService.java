@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ShoppingService {
     List<ShoppingItem> GetShoppingItems();
+    boolean SpikeShoppingItems(int id);
 }

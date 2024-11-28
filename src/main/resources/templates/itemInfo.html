@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping Books</title>
+    <link rel="stylesheet" type="text/css" th:href="@{${cssPath}}">
+    <link rel="shortcut icon " type="images/x-icon" href="/image/shortcut.png">
+</head>
+<script src="../js/item.js"></script>
+<body>
+<div class="shortcut">
+    <div class="wrapper">
+        <!--ul,li分别为无序、有序列表-->
+        <ul>
+            <li><a href="/">返回主菜单</a><a href="">登录</a><a href="">注册</a><a href="">我的订单</a></li>
+        </ul>
+    </div>
+</div>
+<div class="items" id="itemsList">
+    <ol style="list-style-type:none">
+        <li class="items" th:each="item : ${items}">
+            <img th:src="@{${imgPath} + 'image/'+${item.PictureName}}" alt="" class="imgItem">
+            <p class="textItem" th:text="${item.ItemName}"></p>
+            <p class="priceItem"><span>￥</span><span th:text="${item.Price}"></span></p>
+            <button class="buttonItem">
+                <a th:id="@{'link' + ${item.Id}}" th:class="${item.StockSize}>0?'full':'empty'" onclick="SetDisabled(this)" th:data-stocksize="${item.StockSize}" th:data-id="${item.Id}">
+                    购买
+                </a>
+            </button>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

@@ -88,3 +88,40 @@ a{
 .search-bar input[type="submit"]:hover {
     background-color: #4cae4c;
 }
+
+/*Shopping item icon*/
+.items{
+    float: left;
+    background-color: white;
+    overflow:hidden;
+    margin: 0;
+    list-style: none;
+    padding-right: 20px;
+}
+
+.items .imgItem{
+    width: 120px;
+    height:144px;
+
+    background-size: 100% 100%;
+}
+
+.items .textItem{
+    font-size: 14px;
+}
+
+.items .priceItem{
+    font-size: 14px;
+    color: red;
+}
+
+.items .buttonItem{
+    font-size: 14px;
+}
+
+.full{
+}
+
+.empty{
+    color:#ccc
+}
