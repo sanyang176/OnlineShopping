@@ -84,4 +84,10 @@ public class ShoppingServiceImpl implements ShoppingService
 
         return true;
     }
+
+    @Override
+    public List<ShoppingItem> GetShoppingItemsByType(String type) {
+        var shoppingItems = GetShoppingItems();
+        return shoppingItems.stream().filter(x -> x.getItemType().equals(type)).collect(Collectors.toList());
+    }
 }

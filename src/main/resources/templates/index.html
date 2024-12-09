@@ -12,12 +12,14 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="shortcut icon " type="images/x-icon" href="/image/shortcut.png">
 </head>
+<script src="../js/item.js"></script>
+<script src="../js/index.js"></script>
 <body>
 <div class="shortcut">
     <div class="wrapper">
         <!--ul,li分别为无序、有序列表-->
         <ul>
-            <li><a href="">登录</a><a href="">注册</a><a href="">我的订单</a></li>
+            <li><a id="userName" th:text="${userName}"></a><a id="login" href="#" th:onclick="SetLogin()" th:text="${loginStatus}"></a><a href="/register">注册</a><a href="">我的订单</a></li>
         </ul>
     </div>
 </div>
@@ -28,10 +30,12 @@
         <a href="">首页</a><a href="/itemInfo/Book">书籍</a><a href="">户外</a><a href="">电器</a><a href="">美食</a><a href="">居家</a><a href="">洗护</a>
     </div>
     <div class="search-bar">
-        <label>
-            <input type="text" placeholder="搜索商品">
-        </label>
-        <input type="submit" value="搜索">
+        <form  action="/itemInfo/search" method="get" target="_blank">
+            <label>
+                <input type="text" name = "searchKey" placeholder="搜索商品">
+            </label>
+            <input id="searchBox" type="submit" value="搜索">
+        </form>
     </div>
 </div>
 

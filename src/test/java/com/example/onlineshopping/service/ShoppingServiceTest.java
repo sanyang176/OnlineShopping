@@ -143,4 +143,36 @@ public class ShoppingServiceTest {
         //Assert
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void TestGetShoppingItemsByType()
+    {
+        //Arrange
+        Assertions.assertNotNull(shoppingServiceImpl);
+        Assertions.assertNotNull(shoppingItemMapper);
+        var shoppingItem = new ShoppingItem();
+        shoppingItem.setId(1);
+        shoppingItem.setItemName("test");
+        shoppingItem.setPrice(2);
+        shoppingItem.setStockSize(3);
+        shoppingItem.setItemType("123");
+        shoppingItem.setPictureName("testPicture");
+        var arrayList = new ArrayList<ShoppingItem>();
+        arrayList.add(shoppingItem);
+        Mockito.when(shoppingItemMapper.GetShoppingItems()).thenReturn(arrayList);
+        Mockito.when(redisService.GetRedisLock(anyString(),anyString(),anyLong())).thenReturn(true);
+        Mockito.when(redisService.TryGetKeyValue(anyString())).thenReturn(arrayList);
+
+        //Act
+        var result = shoppingServiceImpl.GetShoppingItemsByType("123");
+
+        //Assert
+        Assertions.assertEquals(result.size(), 1);
+        Assertions.assertEquals(result.get(0).getId(),1);
+        Assertions.assertEquals(result.get(0).getItemName(),"test");
+        Assertions.assertEquals(result.get(0).getPrice(),2);
+        Assertions.assertEquals(result.get(0).getStockSize(),3);
+        Assertions.assertEquals(result.get(0).getItemType(),"123");
+        Assertions.assertEquals(result.get(0).getPictureName(),"testPicture");
+    }
 }

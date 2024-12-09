@@ -7,15 +7,24 @@
     <link rel="shortcut icon " type="images/x-icon" href="/image/shortcut.png">
 </head>
 <script src="../js/item.js"></script>
+<script src="../js/index.js"></script>
 <body>
 <div class="shortcut">
     <div class="wrapper">
         <!--ul,li分别为无序、有序列表-->
         <ul>
-            <li><a href="/">返回主菜单</a><a href="">登录</a><a href="">注册</a><a href="">我的订单</a></li>
+            <li><a id="userName" th:text="${userName}"></a><a id="login" href="#" th:onclick="SetLogin()" th:text="${loginStatus}"></a><a href="/register">注册</a><a href="">我的订单</a></li>
         </ul>
     </div>
 </div>
+<dialog>
+    <div>Purchase success!</div>
+    <button>
+        <a href="/">
+        返回主菜单
+        </a>
+    </button>
+</dialog>
 <div class="items" id="itemsList">
     <ol style="list-style-type:none">
         <li class="items" th:each="item : ${items}">
