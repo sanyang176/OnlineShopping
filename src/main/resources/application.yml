@@ -1,2 +1,19 @@
 server:
   port: 8080
+
+  spring:
+    datasource:
+      dynamic:
+        primary: master #设置默认的数据源或者数据源组,默认值即为 master
+        strict: false # 设置严格模式，当数据源找不到时，是否抛出异常，默认为false不抛出
+        datasource:
+          master: # 主库
+            driver-class-name: com.mysql.cj.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
+            url: jdbc:mysql://127.0.0.1:3306/shoppingInformation?characterEncoding=UTF-8&serverTimezone=UTC
+            username: root
+            password: 123456
+          slave: # 从库
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://127.0.0.1:3306/userInformation?characterEncoding=UTF-8&serverTimezone=UTC
+            username: root
+            password: 123456
